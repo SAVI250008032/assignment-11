@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int size1 = 100;
+    int *sales = new int[size1];
+    
+     for (int i=0; i< size1; i++){
+        sales[i] = i+1;
+    }
+    for (int i=0; i< size1; i++){
+        sales[i] = i+1;
+    }
+    cout << "initial sales data: ";
+    for(int i=0; i<100; i++){
+        cout << sales[i] << " "; 
+    }
+    cout <<  endl;
+    
+    int size2 = 200;
+    int *newsales = new int[size2];
+    
+    for (int i=0; i< size1; i++){
+        newsales[i] = sales[i];
+    }
+    for (int i=size1; i<size2; i++){
+        newsales[i]=i+1;
+    }
+    delete[] sales;
+    
+    sales = newsales;
+
+    cout << "size of array is changed to " << size2 << " " << "elements"<< endl;
+    cout << "new sales data: "<< endl;
+    for(int i =0; i< 200; i++){
+        cout <<sales[i] << " "<< endl;
+    }
+    
+    return 0;
+}
